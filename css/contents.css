@@ -4,7 +4,7 @@
   left: 30px;
   font-family: 'Rubik Mono One', sans-serif;
   border: 5px solid white;
-  color: gray;
+  color: #E6E6E6;
   font-size: 82px;
   padding: 20px;
   opacity: 0.8;
@@ -14,7 +14,7 @@
 .title2 {
   font-family: 'Rubik Mono One', sans-serif;
   border: 5px solid white;
-  color: gray;
+  color: #E6E6E6;
   font-size: 82px;
   padding: 20px;
   opacity: 0.8;
@@ -223,7 +223,7 @@ body {
    .title2 {
      font-family: 'Rubik Mono One', sans-serif;
      border: 5px solid white;
-     color: gray;
+     color: #E6E6E6;
      font-size: 40px;
      padding: 8px;
      opacity: 0.8;
