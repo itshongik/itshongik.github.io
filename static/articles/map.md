@@ -1,0 +1,1 @@
+﻿<img src="./static/img/map.png" alt="전시장 배치도" style="width: 40%;"/>
