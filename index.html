@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/cover.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/covervid.min.js"></script>
+
+</head>
+
+<body>
+  <div class="covervid-wrapper">
+    <video class="covervid-video" autoplay loop muted poster="./static/img/bgvideo-fallback.jpg">
+          <source src="./static/img/bg2.webm" type="video/webm">
+          <source src="./static/img/bg2.mp4" type="video/mp4">
+      </video>
+  </div>
+
+  <div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+      <div class="cover-container">
+
+        <div class="inner cover">
+            <a class="title" href="./index2.html">PARTY</a>
+            <br><br>
+            <p class="notokr">2018년 8월 9일 ~ 8월 15일<br>무국적 아트스페이스</p>
+          </p>
+        </div>
+
+        <div class="mastfoot">
+          <div class="inner">
+            <p class="notokr">전시기획팀 잇츠it's</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+</body>
+
+<script>
+  $('.covervid-video').coverVid(854, 480);
+</script>
+
+</html>

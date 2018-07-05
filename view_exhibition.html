@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>아티클 뷰어</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/contents.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+  <script src="./js/jquery-3.3.1.min.js"></script>
+  <script src="./js/showdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/covervid.min.js"></script>
+  <script>
+    $(function() {
+      var getParameters = function(paramName) {
+        // 리턴값을 위한 변수 선언
+        var returnValue;
+
+        // 현재 URL 가져오기
+        var url = location.href;
+
+        // get 파라미터 값을 가져올 수 있는 ? 를 기점으로 slice 한 후 split 으로 나눔
+        var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+
+        // 나누어진 값의 비교를 통해 paramName 으로 요청된 데이터의 값만 return
+        for (var i = 0; i < parameters.length; i++) {
+          var varName = parameters[i].split('=')[0];
+          if (varName.toUpperCase() == paramName.toUpperCase()) {
+            returnValue = parameters[i].split('=')[1];
+            return decodeURIComponent(returnValue);
+          }
+        }
+      };
+
+      var article = getParameters('article') + '.md',
+        md_file_location = './static/articles/' + article;
+
+      $.get(md_file_location, function(data) {
+        var converter = new showdown.Converter();
+        var html = converter.makeHtml(data);
+        $(".text").html(html);
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  <div class="site-wrapper">
+
+    <div class="masthead clearfix">
+      <div class="inner">
+        <nav>
+          <ul class="nav masthead-nav">
+            <li><a href="./view_exhibition.html?article=intro">INTRO</a></li>
+            <li><a href="./view_exhibition.html?article=jun_ho">공준호</a></li>
+            <li><a href="./view_exhibition.html?article=kim_yoon">김유수ㆍ윤태균</a></li>
+            <li><a href="./view_exhibition.html?article=na_je">나제</a></li>
+            <li><a href="./view_exhibition.html?article=su_min">이수민</a></li>
+            <li><a href="./view_exhibition.html?article=seung_yeon">이승연</a></li>
+            <li><a href="./view_exhibition.html?article=ye_rin">이예린</a></li>
+            <li><a href="./view_exhibition.html?article=eun_su">임은수</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+    <div class="site-wrapper-inner">
+      <div class="text">
+        잘못된 접근입니다.
+      </div>
+      <a class="title2" href="./index2.html">PARTY</a><br>
+    </div>
+
+  </div>
+</body>
+
+</html>
